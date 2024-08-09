@@ -1,4 +1,4 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26730.12
@@ -11,13 +11,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XBee.Core", "XBee.Core\XBee.Core.csproj", "{780A3581-45F7-4AE6-9D43-6922B7E18D13}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XBee.Universal", "XBee.Universal\XBee.Universal.csproj", "{499B0DB9-85C1-4DD3-9AA8-72F19932567E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XBee.Universal", "XBee.Universal\XBee.Universal.csproj", "{499B0DB9-85C1-4DD3-9AA8-72F19932567E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XBee.Utility", "XBee.Utility\XBee.Utility.csproj", "{7A630AFB-4B5B-43B9-B0AE-F24ADE65A08D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XBee.Utility", "XBee.Utility\XBee.Utility.csproj", "{7A630AFB-4B5B-43B9-B0AE-F24ADE65A08D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XBee.Classic", "XBee.Classic\XBee.Classic.csproj", "{19F6A167-FA2D-4496-A55F-73EF8210421F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XBee.Classic", "XBee.Classic\XBee.Classic.csproj", "{19F6A167-FA2D-4496-A55F-73EF8210421F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XBee.Classic.Tester", "XBee.Classic.Tester\XBee.Classic.Tester.csproj", "{71F553DA-0D1B-4FD7-801D-0CA9DEECAF3E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XBee.Classic.Tester", "XBee.Classic.Tester\XBee.Classic.Tester.csproj", "{71F553DA-0D1B-4FD7-801D-0CA9DEECAF3E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
