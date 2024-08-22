@@ -69,7 +69,6 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\XBee.Core\XBee.Core.csproj" />
-    <ProjectReference Include="..\XBee.Universal\XBee.Universal.csproj" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.5.240627000" />
