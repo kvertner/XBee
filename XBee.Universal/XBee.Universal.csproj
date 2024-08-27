@@ -1,16 +1,19 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net8.0-windows10.0.19041.0</TargetFramework>
-    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <OutputType>Library</OutputType>
     <DefaultLanguage>en-US</DefaultLanguage>
-    <PackageCertificateKeyFile>XBee.Utility_TemporaryKey.pfx</PackageCertificateKeyFile>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <UseWinUI>true</UseWinUI>
-    <Platforms>x86;x64;arm64</Platforms>
-    <ApplicationManifest>app.manifest</ApplicationManifest>
-    <EnablePreviewMsixTooling>true</EnablePreviewMsixTooling>
-    <RuntimeIdentifiers>win-x86;win-x64;win-arm64</RuntimeIdentifiers>
-    <PublishProfile>win10-$(Platform).pubxml</PublishProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\XBee.Universal.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <OutputPath>bin\x86\Debug\</OutputPath>
@@ -23,7 +26,7 @@
     <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
     <NoWarn>;2008</NoWarn>
     <UseVSHostingProcess>false</UseVSHostingProcess>
-    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+    <DocumentationFile>bin\x86\Release\XBee.Universal.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
     <OutputPath>bin\ARM\Debug\</OutputPath>
@@ -36,7 +39,7 @@
     <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
     <NoWarn>;2008</NoWarn>
     <UseVSHostingProcess>false</UseVSHostingProcess>
-    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+    <DocumentationFile>bin\ARM\Release\XBee.Universal.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
     <OutputPath>bin\x64\Debug\</OutputPath>
@@ -49,32 +52,22 @@
     <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
     <NoWarn>;2008</NoWarn>
     <UseVSHostingProcess>false</UseVSHostingProcess>
-    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+    <DocumentationFile>bin\x64\Release\XBee.Universal.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <AppxManifest Include="Package.appxmanifest">
-      <SubType>Designer</SubType>
-    </AppxManifest>
-    <None Include="XBee.Utility_TemporaryKey.pfx" />
+    <EmbeddedResource Include="Properties\XBee.Universal.rd.xml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Properties\Default.rd.xml" />
-    <Content Include="Assets\LockScreenLogo.scale-200.png" />
-    <Content Include="Assets\SplashScreen.scale-200.png" />
-    <Content Include="Assets\Square150x150Logo.scale-200.png" />
-    <Content Include="Assets\Square44x44Logo.scale-200.png" />
-    <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
-    <Content Include="Assets\StoreLogo.png" />
-    <Content Include="Assets\Wide310x150Logo.scale-200.png" />
+    <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
+      <Version>6.2.14</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\XBee.Core\XBee.Core.csproj" />
-    <ProjectReference Include="..\XBee.Universal\XBee.Universal.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.5.240627000" />
-    <PackageReference Include="Microsoft.Graphics.Win2D" Version="1.2.0" />
-    <PackageReference Include="Microsoft.Windows.Compatibility" Version="8.0.7" />
-    <PackageReference Include="System.Formats.Asn1" Version="8.0.1" />
+    <None Update="NuGet\XBee.Universal.nuspec">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
 </Project>
